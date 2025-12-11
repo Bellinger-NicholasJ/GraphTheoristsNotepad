@@ -1,0 +1,18 @@
+# Build directories
+/build/
+
+# Object / library / binary files
+*.o
+*.obj
+*.lo
+*.la
+*.a
+*.lib
+*.so
+*.so.*
+*.dylib
+*.dll
+*.exe
+
+# Editor / IDE
+.vscode/
