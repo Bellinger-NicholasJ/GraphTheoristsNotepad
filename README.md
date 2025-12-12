@@ -10,6 +10,12 @@ The overall architecture of this program runs off of a statemachine in Notepad.c
 
 In the Future I would like to implement a plane which can be changed to represent other surfaces like a klein bottle or torus. I also wanted to implement an api layer to run scripts that can visually demonstrate algorithms such as Djkstra's algorithm or a maze generator for example. There are also several edge cases with bugs that need to be patched.
 
+For the bipartite calculation, I iterated through the graph coloring the vertex of each edge. If no edges were colored yet I colored one "1" and the other "2", if one was colored I colored the other which ever color was not used yet, and if both were colored then nothing happens. After all vertices have been colored, I iterate through once more just checking for edges with same-colored vertices in which case we have an odd cycle and the graph is not bipartite. This method is more ineffiecent since it iterates through each edge twice, one for each direction, and does that whole process twice. This works because if two adjacent vertices are colored the same then the function wont ditinguish it during coloring and leave it alone, using the pigenhole principle to force out any odd cycles.
+
+For the spanning tree calculation I used the following method: Create a diagonal matrix where D[i][i] = degree of vertex i. Then create the laplacian matrix by subtracting D from the adjacency matrix. Next remove one row and column to get the minor matrix. Finally we take the descriminant of the minor matrix to get the number of spannnig trees using the matrix tree theorem. Note that this implementation may not work with larger graphs due to the structure of the graph using floats which may not be precise enough for massive graphs.
+
+One other area that I would do differently if I recreated the project is that I would have based the graph in more of a tree-like data structure so that each node becomes another graph which would make many algorithms specifically tree algorithms much easier since they are more naturally recursive. In the future I might abtract a Matrix class that updates with Graph and builds a tree-like data structure for the vertices and edges.
+
 ## License
 
 This project is licensed under the:
