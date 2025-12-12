@@ -2,6 +2,14 @@
 
 This is a small tool designed for creating different kinds of graphs.
 
+This application allows you to draw graphs by creating, removing, moving vertices and edges. Several helpful features include adding multiple graphs, changing their color, and their adjacency matrix is displayed. Finally options for calculating the number of spanning trees and determininig if a graph is bipartite are also included.
+
+This application was developed with SFML for most of the graphics rendering and window creation and Dear ImGUI for ui elements in teh tools panel. This is compiled for c++ 20 using cmake 1.16.
+
+The overall architecture of this program runs off of a statemachine in Notepad.cpp with a sub-statemachine for the programloop. The Canvas.cpp and Sidebar.cpp act as a presentation layer, graph.cpp acting as the backend, and Notepad.cpp acting as the broker/master of the program. I tried my best to decouple the different layers for easy development and maintenence as well as structures in place for more advanced features dealing with multiple graphs, directed graphs, etc. The structure of the graph itself is a vector of edges and a vector of vertices with edges containing pointers to vertices.
+
+In the Future I would like to implement a plane which can be changed to represent other surfaces like a klein bottle or torus. I also wanted to implement an api layer to run scripts that can visually demonstrate algorithms such as Djkstra's algorithm or a maze generator for example. There are also several edge cases with bugs that need to be patched.
+
 ## License
 
 This project is licensed under the:
