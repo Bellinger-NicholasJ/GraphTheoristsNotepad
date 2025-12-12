@@ -10,7 +10,11 @@ set(CMAKE_CXX_STANDARD 20)
 
 # Add executable and link files.
 add_executable(notepad 
+    src/Canvas.cpp
+    src/Graph.cpp
     src/main.cpp
+    src/Notepad.cpp
+    src/Sidebar.cpp
 )
 
 # Include directories.

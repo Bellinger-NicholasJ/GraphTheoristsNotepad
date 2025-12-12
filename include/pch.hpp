@@ -12,9 +12,13 @@
 
 // SFML includes
 #include <SFML/Graphics.hpp>
+#include <SFML/System.hpp>
+#include <SFML/Window.hpp>
 
 // Standard library includes
 #include <iostream>
 #include <optional>
+#include <vector>
+#include <string>
 
 #endif

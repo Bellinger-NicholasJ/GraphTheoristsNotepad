@@ -4,14 +4,10 @@
     See the LICENSE file in the project root for full details. */
 
 #include "pch.hpp"
-#include "Notepad.hpp"
+#include "Canvas.hpp"
 
-/**
- * @brief Main entry point for the Notepad application.
- * @return int Exit code.
- * @retval 0 - Success.
- * @retval -1 - Failure.
- */
-int main() {
-    return Notepad::Start();
+void Canvas::Draw(sf::RenderWindow *window, std::vector<Graph*>& graphs) {
+    for (Graph* graph : graphs) {
+        graph->Draw(window);
+    }
 }
