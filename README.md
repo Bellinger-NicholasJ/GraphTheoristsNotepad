@@ -16,6 +16,13 @@ For the spanning tree calculation I used the following method: Create a diagonal
 
 One other area that I would do differently if I recreated the project is that I would have based the graph in more of a tree-like data structure so that each node becomes another graph which would make many algorithms specifically tree algorithms much easier since they are more naturally recursive. In the future I might abtract a Matrix class that updates with Graph and builds a tree-like data structure for the vertices and edges.
 
+## Building the program
+
+1. cd GraphTheroistsNotepad/build
+2. cmake ..
+3. cmake --build .
+4. ./notepad
+
 ## License
 
 This project is licensed under the:
